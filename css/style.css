@@ -6,3 +6,33 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+/*----------
+    DEBUG
+-----------*/
+.debug{
+    border: 1px dashed black;
+}
+.debug-in{
+    border: 1px dashed coral;
+}
+
+/*----------
+    BODY
+-----------*/
+.wrapper{
+    min-height: 300px;
+    width: 900px;
+    margin: 50px auto;
+    display: grid;
+    grid-template-columns: 80% auto;
+}
+#img-primary{
+    background-color: brown;
+    height: 100%;
+}
+
+#img-secondary{
+    background-color: blue;
+    height: 100%;
+}
