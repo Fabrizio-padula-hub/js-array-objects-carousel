@@ -40,3 +40,29 @@ const images = [
         text: 'Marvel\'s Avengers is an epic, third-person, action-adventure game that combines an original, cinematic story with single-player and co-operative gameplay.',
     }
 ];
+
+
+// stampare ogli immagine degli oggetti nel div del dom
+const primaryImg = document.querySelector('.images')
+const lateralImages = document.querySelector('.container-img-lateral');
+console.log(primaryImg)
+console.log(lateralImages)
+
+// ciclare l'array prendendo le immagini
+for(let i = 0; i < images.length; i++){
+    const thisGroup = images[i];
+    console.log(thisGroup)
+
+    const thisImage = thisGroup.image;
+    console.log(thisImage)
+
+    const newPrimaryImg = `
+    <div class="images">
+        <img src="${thisImage}"> 
+    </div>
+    `;
+
+    primaryImg.innerHTML += newPrimaryImg;
+
+
+}
