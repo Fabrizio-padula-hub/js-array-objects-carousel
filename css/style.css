@@ -28,8 +28,17 @@
     grid-template-columns: 80% auto;
 }
 #img-primary{
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: end;
+    text-align: end;
     background-color: brown;
     height: 100%;
+    padding: 20px;
+}
+#img-primary h2{
+    margin-bottom: 10px;
 }
 
 #img-secondary{
