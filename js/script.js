@@ -41,10 +41,11 @@ const images = [
     }
 ];
 
+let activeItem = 0;
 
 // stampare ogli immagine degli oggetti nel div del dom
-const primaryImg = document.querySelector('.images')
-const lateralImages = document.querySelector('.container-img-lateral');
+const primaryImg = document.querySelector('#img-primary')
+const lateralImages = document.querySelector('#img-secondary');
 console.log(primaryImg)
 console.log(lateralImages)
 
@@ -54,15 +55,36 @@ for(let i = 0; i < images.length; i++){
     console.log(thisGroup)
 
     const thisImage = thisGroup.image;
+    const thisTitle = thisGroup.title;
+    const thisText = thisGroup.text;
     console.log(thisImage)
 
+    // stamparle sul contenitore principale
     const newPrimaryImg = `
-    <div class="images">
-        <img src="${thisImage}"> 
+    <div class="slide">
+        <img class="img" src="${thisImage}"> 
+        <h2>${thisTitle}</h2>
+        <span>${thisText}</span>
     </div>
     `;
 
     primaryImg.innerHTML += newPrimaryImg;
 
+    // stamparle sul contenitore laterale
+    const newLateralImg = `
+    <div class="container-img-lateral">
+        <img src="${thisImage}"> 
+    </div>
+    `;
 
+    lateralImages.innerHTML += newLateralImg;
 }
+
+// Aggiunta della classe block alla prima immagine
+const allImages = document.querySelectorAll('.sliders');
+allImages[activeItem].classList.add('block');
+const allThumbnails = document.querySelectorAll('#img-secondary');
+allThumbnails[activeItem].classList.add('block');
+
+
+    // rimuovere la classe e incrementarla di uno
